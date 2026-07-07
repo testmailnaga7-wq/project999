@@ -1,4 +1,4 @@
-name: Java CI
+name: Java sdf WAR CI
 
 on:
   push:
@@ -7,34 +7,43 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-
+      # Checkout source code
       - name: Checkout Source Code
         uses: actions/checkout@v4
 
+      # Install Java
       - name: Setup Java
         uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '21'
 
+      # Verify Java
       - name: Verify Java Version
         run: java -version
 
+      # Verify Maven
       - name: Verify Maven Version
         run: mvn -version
 
-      - name: Build Java Project
+      # Build WAR file
+      - name: Build WAR Project
         run: mvn clean package
 
+      # Run Tests
       - name: Run Unit Tests
         run: mvn test
 
-      - name: Upload Build Artifact
+      # Display target folder contents
+      - name: List target folder
+        run: ls -la target
+
+      # Upload WAR Artifact
+      - name: Upload WAR Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: java-artifact
-          path: target/*.jar
+          name: java-war-artifact
+          path: target/*.war
