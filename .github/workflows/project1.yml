@@ -20,7 +20,7 @@ jobs:
          - name: check the java version
            run: java --version
 
-         - name: install maven on ubuntu machine
+         - name: install maven on ubuntu machine 
            run: sudo apt update && sudo apt install -y maven
          - name: check the maven installation details
            run: mvn --version
