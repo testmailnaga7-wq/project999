@@ -24,4 +24,8 @@ jobs:
            run: mvn clean package
          - name: check that war file is available or not  
            run: ls -ltr target
-       
+         - name: store the artifact in the  current github action run 
+           uses: actions/upload-artifact@v7
+           with:
+                name: abc.war
+                path: target/*.war
