@@ -1,5 +1,5 @@
 name: myjavaproject
-on:
+on: 
   push:
     branches: 
        - master
