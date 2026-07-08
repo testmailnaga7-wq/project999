@@ -20,5 +20,8 @@ jobs:
            run: |
                 sudo apt update -y
                 sudo apt install maven -y 
-         
+         - name: Build the artifact
+           run: mvn clean package
+         - name: check that war file is available or not  
+           run: ls -ltr target
        
