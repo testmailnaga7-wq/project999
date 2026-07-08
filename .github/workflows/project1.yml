@@ -32,4 +32,9 @@ jobs:
            run: mvn test
          - name: check the target folder
            run: ls -ltr target
+
+         - uses: actions/upload-artifact@v7
+           with:
+                name: my-artifact
+                path: target/*.war
            
