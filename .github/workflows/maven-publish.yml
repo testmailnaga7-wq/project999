@@ -11,6 +11,28 @@ jobs:
    build:
         runs-on: ubuntu-latest
         steps:
+
+         - name: download the code from the githubto githubactions
+           uses: actions/checkout@v4
+         - uses: actions/setup-java@v5
+           with:
+              distribution: 'temurin' # See 'Supported distributions' for available options
+              java-version: '25'
+         - name: Check java installed or not
+           run: java --version
+         - name: Install Maven on ubuntulatest
+           run: |
+                sudo apt update -y
+                sudo apt install maven -y 
+         - name: Build the artifact
+           run: mvn clean package
+         - name: check that war file is available or not  
+           run: ls -ltr target
+         - name: store the artifact in the  current github action run 
+           uses: actions/upload-artifact@v7
+           with:
+                name: abc.war
+                path: target/*.war
            
          - name: Azure login
            uses: azure/login@v2
