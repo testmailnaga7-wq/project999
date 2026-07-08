@@ -30,6 +30,6 @@ jobs:
 
          - name: test
            run: mvn test
-         - name: where ami
-           run: pwd
+         - name: check the target folder
+           run: ls -ltr target
            
