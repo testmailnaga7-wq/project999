@@ -1,0 +1,26 @@
+name: myjavaproject
+on:
+  push:
+    branches: 
+       - main
+  workflow_dispatch:
+    
+jobs:
+   mybuild:
+      runs-on: ubuntu-latest
+      steps:
+         - name: donwload the code
+           uses: actions/checkout@v4
+           
+         - name: setup java
+           uses: actions/setup-java@v5
+           with:
+                distribution: 'temurin' # See 'Supported distributions' for available options
+                java-version: '25'
+         - name: check the java version
+           run: java --version
+
+         - name: install maven on ubuntu machine
+           run: apt install mvn -y
+         - name: check the maven installation details
+           run: mvn --version
