@@ -24,3 +24,12 @@ jobs:
            run: sudo apt update && sudo apt install -y maven
          - name: check the maven installation details
            run: mvn --version
+
+         - name: build the war file
+           run:  mvn clean package
+
+         - name: test
+           run: mvn test
+         - name: where ami
+           run: pwd
+           
