@@ -1,0 +1,10 @@
+name: test
+on:
+  push: 
+    branches:
+      - main
+jobs:
+     myjob:
+         runs-on: self-hosted
+         steps:
+           - run: echo "Good Morning"
