@@ -45,7 +45,7 @@ jobs:
          - name: LoginSuccess
            run: echo "Login success"
           
-         - uses: azure/webapps-deploy@v3
+         - uses: azure/webapps-deploy@v2
            with:
-              app-name: mywebapp777
+              app-name: 'webapp888'
               package: 'target/*.war'  
