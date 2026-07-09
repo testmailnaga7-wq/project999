@@ -1,0 +1,17 @@
+name: Demo
+
+on:
+  workflow_dispatch:
+    inputs:
+      appname:
+        description: "Application Name"
+        required: true
+        default: "myapp"
+        type: string
+
+jobs:
+  demo:
+    runs-on: ubuntu-latest
+
+    steps:
+      - run: echo "App Name is ${{ inputs.appname }}"
