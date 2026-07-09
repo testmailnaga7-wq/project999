@@ -42,3 +42,5 @@ jobs:
                 subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
                 environment: 'AzureCloud'
                 enable-AzPSSession: true
+         - name: LoginSuccess
+           run: echo "Login success"
