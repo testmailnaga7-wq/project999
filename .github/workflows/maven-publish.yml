@@ -47,5 +47,5 @@ jobs:
           
          - uses: azure/webapps-deploy@v2
            with:
-              app-name: 'webapp888'
-              package: 'abc.war'  
+              app-name: webapp888
+              package: target/*.war
