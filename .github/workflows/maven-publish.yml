@@ -44,3 +44,8 @@ jobs:
                 enable-AzPSSession: true
          - name: LoginSuccess
            run: echo "Login success"
+          
+         - uses: azure/webapps-deploy@v3
+         with:
+              app-name: mywebapp777
+              package: 'target/*.war'  
