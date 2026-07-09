@@ -3,7 +3,7 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.java.example</groupId>
   <artifactId>java-example</artifactId>
-  <packaging>war</packaging>
+  <packaging>war</packaging> 
   <version>2.0-SNAPSHOT</version> 
   <url>http://maven.apache.org</url> 
   <dependencies>
